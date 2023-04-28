@@ -6,6 +6,7 @@ import SubCategory from "../pages/category/sub-category/SubCategory";
 import Product from "../pages/product/Product";
 import Wallet from "../pages/wallet/Wallet";
 import Order from "../pages/order/Order";
+import Settings from "../pages/settings/Settings";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/wallet",
         element: <Wallet />,
+      },
+      {
+        path: "/settings",
+        element: <Settings />,
       },
     ],
   },

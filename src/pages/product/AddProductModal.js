@@ -8,7 +8,7 @@ function AddProductModal({ closeModal }) {
   const [options, setOptions] = useState([]);
 
   useEffect(() => {
-    getCategory();
+    getCategory().then((data) => setOptions(data));
   }, []);
 
   const onSubmit = (data) => {
@@ -21,7 +21,12 @@ function AddProductModal({ closeModal }) {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div class="form-group">
           <label for="title">Select Category</label>
-          <select className="form-control" {...register("category_name")}>
+          <select
+            className="form-control"
+            {...register("category_name", {
+              required: true,
+            })}
+          >
             <option key={options.cat_id} value={options.name}>
               {options.name}
             </option>
@@ -29,18 +34,36 @@ function AddProductModal({ closeModal }) {
         </div>
         <div class="form-group">
           <label for="title">Product Name</label>
-          <input type="text" className="form-control" />
+          <input
+            type="text"
+            className="form-control"
+            {...register("product_name", {
+              required: true,
+            })}
+          />
         </div>
         <div class="form-group">
           <label for="title">Description</label>
-          <textarea rows="5" className="form-control"></textarea>
+          <textarea
+            rows="5"
+            className="form-control"
+            {...register("description", {
+              required: true,
+            })}
+          ></textarea>
         </div>
         <div class="form-group">
           <label for="title">Price</label>
-          <input type="text" className="form-control" />
+          <input
+            type="text"
+            className="form-control"
+            {...register("price", {
+              required: true,
+            })}
+          />
         </div>
         <div class="form-group flex items-center gap-2">
-          <input type="checkbox" />
+          <input type="checkbox" {...register("is_instant")} />
           <label for="title">Is Instant?</label>
         </div>
         <footer className="card-footer mt-4">

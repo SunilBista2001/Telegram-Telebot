@@ -58,7 +58,7 @@ function Sidebar() {
                 />
               </Link>
               <Link to="/order">
-                <SidebarTitle Icon={LocalShippingIcon} title="Order" />
+                <SidebarTitle Icon={LocalShippingIcon} title="Order List" />
               </Link>
               <Link to="/wallet">
                 <SidebarTitle Icon={AccountBalanceWalletIcon} title="Wallet" />
