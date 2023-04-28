@@ -4,7 +4,8 @@ import Home from "../pages/Home/Home";
 import Category from "../pages/category/Category";
 import SubCategory from "../pages/category/sub-category/SubCategory";
 import Product from "../pages/product/Product";
-import OrderPage from "../pages/order/OrderPage";
+import Wallet from "../pages/wallet/Wallet";
+import Order from "../pages/order/Order";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/order",
-        element: <OrderPage />,
+        element: <Order />,
+      },
+      {
+        path: "/wallet",
+        element: <Wallet />,
       },
     ],
   },
